@@ -1,0 +1,223 @@
+.modal {
+  position: fixed;
+  width: 100%;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+}
+
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out, -o-transform 0.3s ease-out;
+  -webkit-transform: translate(0, -5%);
+       -o-transform: translate(0, -5%);
+          transform: translate(0, -5%);
+}
+
+.modal.show .modal-dialog {
+  -webkit-transform: translate(0, 0);
+       -o-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal-dialog {
+  position: relative;
+  width: auto;
+}
+
+.modal-content {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  outline: 0;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+}
+
+.modal-backdrop.fade {
+  opacity: 0;
+}
+
+.modal-backdrop.show {
+  opacity: 0.5;
+}
+
+.modal-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #eceeef;
+}
+
+.modal-title {
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.modal-body {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 15px;
+}
+
+.modal-footer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 15px;
+  border-top: 1px solid #eceeef;
+}
+
+.modal-footer > :not(:first-child) {
+  margin-left: .25rem;
+}
+
+.modal-footer > :not(:last-child) {
+  margin-right: .25rem;
+}
+
+#sendMessageButton {
+  border: 1px solid white;
+  box-shadow: 1px 1px 1px black;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+#sendMessageButton:disabled {
+  border: 1px solid gray;
+  color: gray;
+  cursor: not-allowed;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 500px;
+  }
+  .modal-sm {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-lg {
+    max-width: 800px;
+  }
+}
+
+
+
+.g-recaptcha > div {
+    margin-top: 15px;
+  }
+
+.g-recaptcha > div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-height: 450px) {
+  .modal-open > #main {
+    position: fixed;
+  }
+
+  .modal {
+    position: absolute;
+  }
+}
+
+@media (max-height: 475px) {
+  .g-recaptcha > div {
+    margin-top: 5px;
+  }
+
+  .modal-body {
+    padding: 5px;
+  } 
+
+  .modal-footer {
+    padding: 5px;
+  } 
+}
+
+@media (max-height: 550px) {
+  .modal-body > hr {
+    display: none;
+  }
+
+  .modal-header {
+    padding: 0 15px;
+  }
+
+  .modal-title {
+    font-size: 1.33em;
+  }
+}
+
+@media (max-height: 660px) {
+  .form-control {
+    font-size: 14px;
+    padding: 4px 10px; 
+  } 
+}
+
+@media (max-height: 710px) {
+  .modal-dialog {
+    margin: 75px auto;
+  }
+}
+
+@media (min-height: 711px) {
+  .modal-dialog {
+    margin: 100px auto;
+  }
+}

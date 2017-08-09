@@ -1,0 +1,79 @@
+#contact-work-history {
+    border: 2px solid black;
+    color: black;
+    margin-bottom: 50px;
+}
+
+.fa-check {
+    color: #006600;
+}
+
+#gradetracker-logo {
+    height: 55px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+#luscombe-associates-image, #smarter-hq-image, #taylor-image {
+    height: 75px;
+    margin-bottom: 25px;
+}
+
+.project-logo {
+    height: 75px;
+    margin-bottom: 10px;
+}
+
+#taylor-image {
+    padding: 0 10px;
+}
+
+.top-project {
+    padding-bottom: 100px;
+}
+
+.top-projects-container {
+    background-color: #eeeeee;
+}
+
+.top-projects-title {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.work-caption {
+    margin-bottom: 25px;
+    margin-top: 25px;
+    padding: 0 15px;
+    text-transform: none;
+}
+
+.work-check {
+    margin: 10px 0;
+}
+
+.work-container {
+    padding: 50px 0;
+    text-transform: none;
+}
+
+.work-project-caption {
+    padding: 10px 0;
+    text-transform: none;
+}
+
+#work-history {
+    background-color: #fff;
+    color: black;
+    width: 100%;
+    padding-top: 100px;
+    position: relative;
+    text-align: center;
+}
+
+@media(min-width: 1025px) {
+    .work-caption {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}

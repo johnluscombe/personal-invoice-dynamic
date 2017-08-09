@@ -1,0 +1,26 @@
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="contactModalLabel">Send me a message!</h5>
+                <a href="#" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="name" class="form-control" onkeyup="validateFields();" placeholder="Name">
+                <div class="form-inline">
+                    <input type="email" id="email" class="form-control col-6" onkeyup="validateFields();" placeholder="Email address">
+                    <input type="tel" id="phone" class="form-control col-6" placeholder="Phone number (optional)">
+                </div>
+                <input type="text" id="company" class="form-control" placeholder="Company (optional)">
+                <hr>
+                <textarea id="message" class="form-control" rows="5" onkeyup="validateFields();" placeholder="What would you like to say?"></textarea>
+                <div class="g-recaptcha" data-callback="validateFieldsFunction" data-expired-callback="validateFieldsFunction" data-sitekey="6LfrGSoUAAAAALMHYjNUMgx70Ed6BERIWLc3BOM8"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="sendMessageButton" type="submit" data-dismiss="modal" onclick="resetForm(); sendEmail();" disabled>Send</button>
+            </div>
+        </div>
+    </div>
+</div>

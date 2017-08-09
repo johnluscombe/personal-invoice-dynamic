@@ -1,0 +1,179 @@
+@font-face {
+    font-family: Oswald-Bold;
+    src: url("/static/font/Oswald-Bold.ttf");
+}
+
+@font-face {
+    font-family: Oswald-Bold-Italic;
+    src: url("/static/font/Oswald-BoldItalic.ttf");
+}
+
+@font-face {
+    font-family: Oswald-Regular;
+    src: url("/static/font/Oswald-Regular.ttf");
+}
+
+@font-face {
+    font-family: Oswald-Regular-Italic;
+    src: url("/static/font/Oswald-RegularItalic.ttf");
+}
+
+@font-face {
+    font-family: Oswald-Light;
+    src: url("/static/font/Oswald-Light.ttf");
+}
+
+@font-face {
+    font-family: Oswald-Light-Italic;
+    src: url("/static/font/Oswald-LightItalic.ttf");
+}
+
+a {
+    color: white;
+    font-family: Oswald-Light, sans-serif;
+    margin: 0 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+body {
+    color: white;
+    margin: 0;
+    height: 100%;
+    position: relative;
+}
+
+button {
+    background: none;
+    cursor: pointer;
+    font-family: Oswald-Light, sans-serif;
+    font-size: 1.37em;
+    outline: none;
+    padding: 0 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+div {
+    font-family: Oswald-Light, sans-serif;
+}
+div > em {
+    font-family: Oswald-Light-Italic, sans-serif;
+}
+div > strong {
+    font-family: Oswald-Regular, sans-serif;
+}
+
+
+h1 {
+    font-family: Oswald-Bold, sans-serif;
+    font-size: 4em;
+    margin: 0;
+    text-transform: uppercase;
+}
+h1 > em {
+    font-family: Oswald-Bold-Italic, sans-serif;
+}
+
+
+h2 {
+    font-family: Oswald-Regular, sans-serif;
+    font-size: 3em;
+    margin: 0;
+    text-transform: uppercase;
+}
+h2 > em {
+    font-family: Oswald-Regular-Italic, sans-serif;
+}
+h2 > strong {
+    font-family: Oswald-Bold, sans-serif;
+}
+
+
+h3 {
+    font-family: Oswald-Regular, sans-serif;
+    font-size: 2.34em;
+    margin: 0;
+    text-transform: uppercase;
+}
+h3 > em {
+   font-family: Oswald-Regular-Italic, sans-serif; 
+}
+h3 > strong {
+   font-family: Oswald-bold, sans-serif; 
+}
+
+
+h4 {
+    font-family: Oswald-Light, sans-serif;
+    font-size: 2em;
+    margin: 0;
+    text-transform: uppercase;
+}
+h4 > em {
+    font-family: Oswald-Light-Italic, sans-serif;
+}
+h4 > strong {
+    font-family: Oswald-Regular, sans-serif;
+}
+
+
+h5 {
+    font-family: Oswald-Light, sans-serif;
+    font-size: 1.66em;
+    margin: 0;
+    text-transform: uppercase;
+}
+h5 > em {
+    font-family: Oswald-Light-Italic, sans-serif;
+}
+h5 > strong {
+    font-family: Oswald-Regular, sans-serif;
+}
+
+
+h6 {
+    font-family: Oswald-Light, sans-serif;
+    font-size: 1.33em;
+    margin: 0;
+    text-transform: uppercase;
+}
+h6 > em {
+    font-family: Oswald-Light-Italic, sans-serif;
+}
+h6 > strong {
+    font-family: Oswald-Regular, sans-serif;
+}
+
+
+p {
+    font-family: Oswald-Light, sans-serif;
+    margin: 0;
+    text-transform: uppercase;
+}
+p > em {
+    font-family: Oswald-Light-Italic, sans-serif;
+}
+p > strong {
+    font-family: Oswald-Regular, sans-serif;
+}
+
+
+td {
+    padding: 0 10px;
+}
+
+textarea {
+    font: 13.3333px Arial;
+    resize: vertical;
+}
+
+.center-block {
+    margin: 0 auto;
+}
+
+
+.no-uppercase {
+    text-transform: none;
+}

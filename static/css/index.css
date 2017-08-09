@@ -1,0 +1,15 @@
+#main {
+    transition: margin-right .5s;
+}
+
+.section-title {
+    text-align: center;
+}
+
+.text-block {
+    margin: 1% 0;
+}
+
+.text-block > h5 {
+    margin: -10px 0 0 0;
+}

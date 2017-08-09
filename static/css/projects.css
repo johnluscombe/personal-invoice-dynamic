@@ -1,0 +1,38 @@
+#contact-projects {
+    border: 2px solid black;
+    color: black;
+}
+
+.project-container {
+    padding: 50px 0;
+}
+
+.project-image {
+    max-width: 1000px;
+    margin: 25px 0;
+    width: 100%;
+}
+
+#projects {
+    background-color: #fff5dd;
+    color: black;
+    width: 100%;
+    padding-bottom: 100px;
+    padding-top: 100px;
+    position: relative;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .project-container {
+        margin: 15px auto;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .project-container {
+        margin: 0 auto;
+        width: 60%;
+    }
+}

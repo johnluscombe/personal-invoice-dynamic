@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>John Luscombe</title>
+
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/static/css/about_me.css">
+    <link rel="stylesheet" href="/static/css/education.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+    <link rel="stylesheet" href="/static/css/general.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/meter.css">
+    <link rel="stylesheet" href="/static/css/navbar.css">
+    <link rel="stylesheet" href="/static/css/overview.css">
+    <link rel="stylesheet" href="/static/css/projects.css">
+    <link rel="stylesheet" href="/static/css/sidebar.css">
+    <link rel="stylesheet" href="/static/css/technical_skills.css">
+    <link rel="stylesheet" href="/static/css/work_history.css">
+
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="/static/css/alert.css">
+    <link rel="stylesheet" href="/static/css/carousel.css">
+    <link rel="stylesheet" href="/static/css/form-control.css">
+    <link rel="stylesheet" href="/static/css/modal.css">
+
+    <link rel="stylesheet" href="/static/lib/font-awesome-4.7.0/css/font-awesome.min.css">
+
+
+    <script src="/static/js/index.js"></script>
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
+    <script src="/static/js/tether.min.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+
+<body>
+    <img src="/static/img/main_background.jpg" alt="Background - Code" id="overview-background">
+    <img src="/static/img/brain_circuits.png" alt="Brain Circuits" id="technical-skills-background">
+
+    {% include 'sidebar.html' %}
+    {% include 'send-success.html' %}
+    {% include 'send-failure.html' %}
+    {% include 'modal.html' %}
+
+    <div id="main">
+        {% include 'navbar.html' %}
+        {% include 'overview.html' %}
+        {% include 'about-me.html' %}
+        {% include 'projects.html' %}
+        {% include 'work-history.html' %}
+        {% include 'education.html' %}
+        {% include 'technical-skills.html' %}
+        {% include 'footer.html' %}
+    </div>
+</body>
+</html>

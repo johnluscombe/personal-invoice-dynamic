@@ -1,0 +1,93 @@
+#about-me {
+    background-color: #44e5aa;
+    color: white;
+    width: 100%;
+    padding-bottom: 100px;
+    padding-top: 100px;
+    position: relative;
+    text-align: center;
+    text-shadow: 1px 1px 1px #159d6b;
+}
+
+#about-me-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+#about-me-image {
+    height: 450px;
+    padding: 0 15px;
+    width: 330px;
+}
+
+.carousel-caption {
+    text-shadow: 1px 1px 1px black;
+}
+
+.carousel-image {
+    overflow: hidden;
+}
+
+#contact-about-me {
+    border: 1px solid white;
+    box-shadow: 1px 1px 1px #159d6b;
+    color: white;
+    text-shadow: 1px 1px 1px #159d6b;
+}
+
+#contact-me-link {
+    cursor: pointer;
+    font-family: Oswald-Light, sans-serif;
+    margin: 0;
+    text-decoration: underline;
+}
+
+#naming-image {
+    filter: brightness(50%);
+    -moz-filter: brightness(50%);
+    -ms-filter: brightness(50%);
+    -o-filter: brightness(50%);
+    -webkit-filter: brightness(50%);
+}
+
+#long-lines-image {
+    filter: brightness(50%);
+    -moz-filter: brightness(50%);
+    -ms-filter: brightness(50%);
+    -o-filter: brightness(50%);
+    -webkit-filter: brightness(50%);
+}
+
+#programming-philosophy-container {
+    margin: 50px 0;
+}
+
+@media (max-width: 767px) {
+    #about-me-container {
+        flex-wrap: wrap;
+        padding: 0 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    #about-me-content {
+        margin: 0 15px;
+        max-width: 600px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 1055px) {
+    #carousel-container, .carousel-image {
+        height: 67vw;
+    }
+}
+
+@media (min-width: 1056px) {
+    #carousel-container, .carousel-image {
+        height: 684px;
+        width: 1026px;
+    }
+}

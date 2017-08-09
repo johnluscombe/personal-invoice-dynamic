@@ -1,0 +1,65 @@
+#contact-technical-skills {
+    border: 1px solid white;
+    box-shadow: 1px 1px 1px #159d6b;
+    color: white;
+    text-shadow: 1px 1px 1px #159d6b;
+}
+
+.language-block, .os-block, .technology-block {
+    margin: 10px 0;
+}
+
+.languages-container, .os-container, .technologies-container {
+    margin: 50px 0;
+}
+
+#technical-skills {
+    background-color: rgba(68, 229, 170, 0.9);
+    color: white;
+    width: 100%;
+    padding-bottom: 100px;
+    padding-top: 100px;
+    position: relative;
+    text-shadow: 1px 1px 1px #44e5aa;
+    text-align: center;
+    text-shadow: 1px 1px 1px #159d6b;
+}
+
+#technical-skills-background {
+    display: none;
+    height: 100%;
+    margin: 0 auto;
+    position: fixed;
+    transform: translate(-50%, -50%);
+
+    left: 50%;
+    top: 50%;
+}
+
+@media (min-width: 577px) {
+    .language, .os {
+        display: inline-block;
+        text-align: right;
+        width: 150px;
+    }
+
+    .language-skill-level, .os-skill-level {
+        display: inline-block;
+        text-align: left;
+        width: 150px;
+    }
+}
+
+@media (min-width: 769px) {
+    .technology {
+        display: inline-block;
+        text-align: right;
+        width: 300px;
+    }
+
+    .technology-skill-level {
+        display: inline-block;
+        text-align: left;
+        width: 300px;
+    }
+}
