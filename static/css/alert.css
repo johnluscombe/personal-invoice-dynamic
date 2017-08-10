@@ -27,11 +27,15 @@
 }
 
 .alert-success {
-  background-color: rgba(92,184,92,0.5);
+  background-color: rgba(92,184,92,0.7);
 }
 
 .alert-danger {
-  background-color: rgba(217,83,79,0.5);
+  background-color: rgba(217,83,79,0.7);
+}
+
+.alert-neutral {
+    background-color: rgba(25,25,25,0.7);
 }
 
 .close {
@@ -51,6 +55,14 @@ button.close {
   -webkit-appearance: none;
 
   box-shadow: none; 
+}
+
+#failure-message, #success-message, #sending-message {
+    text-transform: none;
+}
+
+#send-failure-email {
+    text-transform: none;
 }
 
 .show {

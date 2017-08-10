@@ -1,3 +1,5 @@
 .idea
+*.pyproj
+*.sln
 .vs
-.DS_Store
+**/.DS_Store

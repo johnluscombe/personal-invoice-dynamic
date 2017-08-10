@@ -1,5 +1,5 @@
 #main {
-    transition: margin-right .5s;
+    transition: margin-left .5s, margin-right .5s;
 }
 
 .section-title {

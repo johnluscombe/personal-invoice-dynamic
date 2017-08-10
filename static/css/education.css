@@ -55,17 +55,6 @@
     width: 200px;
 }
 
-@media (max-width: 575px) {
-    #taylor-container {
-        flex-wrap: wrap;
-        padding: 0 15px;
-    }
-
-    #taylor-text {
-        text-align: center;
-    }
-}
-
 @media (max-width: 767px) {
     .course, .course-right {
         flex-wrap: wrap;
@@ -81,6 +70,16 @@
     .course-image-right {
         margin-bottom: 15px;
         order: -1;
+    }
+
+    #taylor-container {
+        flex-wrap: wrap;
+        padding: 0 15px;
+    }
+
+    #taylor-text {
+        text-align: center;
+        width: 100%;
     }
 }
 

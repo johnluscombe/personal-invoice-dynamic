@@ -1,8 +1,14 @@
 <div id="send-failure" class="alert alert-danger alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <button type="button" class="close" aria-label="Close" onclick="hideFailure();">
         <span aria-hidden="true">&times;</span>
     </button>
     <h4 class="alert-heading">Oops</h4>
-    <p>Looks like the message couldn't send for some reason. Here are some other ways you can contact me:</p>
-    <i class="fa fa-envelope"></i> jluscombe96@gmail.com
+    <h6 id="failure-message">Looks like the message couldn't send for some reason. Here are some other ways you can contact me:</h6>
+    <div class="social-media">
+        <a href="https://www.facebook.com/john.luscombe.180" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/in/john-luscombe-932a43106/" target="_blank"><i class="fa fa-linkedin"></i></a><br>
+        <strong>
+            <a href="mailto:jluscombe96@gmail.com" id="send-failure-email"><i class="fa fa-envelope-o" target="_blank"></i> jluscombe96@gmail.com</a>
+        </strong>
+    </div>
 </div>

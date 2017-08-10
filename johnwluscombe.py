@@ -1,10 +1,13 @@
 from flask import Flask
 from flask import jsonify
 from flask import render_template
+from flask import request
+
 import boto3
 import http.client
 import json
 import os
+
 
 app = Flask(__name__)
 
@@ -14,37 +17,43 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/verify-recaptcha', methods=['POST'])
-def verify_recaptcha():
-    #TODO: token=[get token from request]
+def recaptcha_is_valid(token):
     connection = http.client.HTTPSConnection('www.google.com')
-    headers = {'Content-type': 'application/json'}
-    body = {'secret': os.environ['RECAPTCHA_SECRET'], 'response': token}
-    jsonBody = json.dumps(body)
-    connection.request('POST', '/recaptcha/api/siteverify', jsonBody, headers)
+    endpoint = '/recaptcha/api/siteverify'
+    params = '?secret=%s&response=%s'% (os.environ['RECAPTCHA_SECRET'], token)
+    path = endpoint + params
+    connection.request('POST', path)
     httpResponse = connection.getresponse()
-    return httpResponse.read().decode()
+    stringResponse = httpResponse.read().decode()
+    response = json.loads(stringResponse)
+    return response['success']
 
 
 def get_email_body(name, email, phone, company, message):
-    body = "<strong>Name:</strong> %s\n" % name
-    body += "<strong>Email:</strong> %s\n" % email
+    body = "<strong>Name:</strong> %s<br>" % name
+    body += "<strong>Email:</strong> %s<br>" % email
 
     if phone:
-        body += "<strong>Phone:</strong> %s\n" % phone
+        body += "<strong>Phone:</strong> %s<br>" % phone
 
     if company:
-        body += "<strong>Company:</strong> %s\n" % name
+        body += "<strong>Company:</strong> %s<br>" % name
 
-    body += "\n%s" % message
+    body += "<br>%s" % message
     return body
 
 
 @app.route('/send-email', methods=['POST'])
-def send_email(name, email, phone, company, message):
+def send_email():
     try:
-        #TODO: token=[get name, email, phone, company, and message from request]
-        if os.environ['EMAIL_TOKEN'] == '80e0adba56fb2852647fe3c3fa901a20499cccfe6191feec':
+        name = request.json['name']
+        email = request.json['email']
+        phone = request.json['phone']
+        company = request.json['company']
+        message = request.json['message']
+        token = request.json['token']
+
+        if recaptcha_is_valid(token):
             aws = boto3.client('ses')
             aws.send_email(
                 Source=os.environ['FROM_ADDRESS'],
@@ -67,7 +76,7 @@ def send_email(name, email, phone, company, message):
             return jsonify({'success': 'true'})
         else:
             return jsonify({'success': 'false'})
-    except:
+    except Exception as e:
         return jsonify({'success': 'false'})
 
 

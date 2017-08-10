@@ -5,7 +5,7 @@
     z-index: 2;
     top: 0;
     right: 0;
-    background-color: rgba(0,0,0,0.5);
+    background-color: black;
     overflow-x: hidden;
     transition: width .5s;
 }

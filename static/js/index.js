@@ -8,6 +8,7 @@ function checkBrowser() {
 
 function openSidebar() {
     document.getElementById("burger").onclick = closeSidebar;
+    document.getElementById("main").style.marginLeft = "-300px";
     document.getElementById("main").style.marginRight = "300px";
     document.getElementById("navbar").style.marginRight = "300px";
     document.getElementById("sidebar").style.width = "300px";
@@ -15,6 +16,7 @@ function openSidebar() {
 
 function closeSidebar() {
     document.getElementById("burger").onclick = openSidebar;
+    document.getElementById("main").style.marginLeft = "0";
     document.getElementById("main").style.marginRight = "0";
     document.getElementById("navbar").style.marginRight = "0";
     document.getElementById("sidebar").style.width = "0";
@@ -31,15 +33,12 @@ function handleBackgrounds() {
 
     if (window.pageYOffset > endOfOverview) {
         document.getElementById("overview-background").style.display = "none";
-        document.getElementById("sidebar").style.backgroundColor = "rgb(0,0,0)";
         document.getElementById("technical-skills-background").style.display = "block";
     } else if (window.pageYOffset > endOfOverview-50) {
         document.getElementById("overview-background").style.display = "block";
-        document.getElementById("sidebar").style.backgroundColor = "rgb(0,0,0)";
         document.getElementById("technical-skills-background").style.display = "none";
     } else {
         document.getElementById("overview-background").style.display = "block";
-        document.getElementById("sidebar").style.backgroundColor = "rgba(0,0,0,0.5)";
         document.getElementById("technical-skills-background").style.display = "none";
     }
 }
@@ -68,10 +67,64 @@ function resetForm() {
   grecaptcha.reset();
 }
 
+function showSuccess() {
+    document.getElementById("send-success").classList.add("show");
+    document.getElementById("send-failure").classList.remove("show");
+    document.getElementById("sending").classList.remove("show");
+}
+
+function showFailure() {
+    document.getElementById("send-success").classList.remove("show");
+    document.getElementById("send-failure").classList.add("show");
+    document.getElementById("sending").classList.remove("show");
+}
+
+function showSending() {
+    document.getElementById("send-success").classList.remove("show");
+    document.getElementById("send-failure").classList.remove("show");
+    document.getElementById("sending").classList.add("show");
+}
+
+function hideSuccess() {
+    document.getElementById("send-success").classList.remove("show");
+}
+
+function hideFailure() {
+    document.getElementById("send-failure").classList.remove("show");
+}
+
+function hideSending() {
+    document.getElementById("sending").classList.remove("show");
+}
+
 function sendEmail() {
-    setTimeout(function() {
-        document.getElementById("send-failure").classList.add("show");
-    }, 300);
+    var params = {
+        "name": document.getElementById("name").value,
+        "email": document.getElementById("email").value,
+        "phone": document.getElementById("phone").value,
+        "company": document.getElementById("company").value,
+        "message": document.getElementById("message").value,
+        "token": grecaptcha.getResponse()
+    }
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);
+            if (response["success"] == "true") {
+                showSuccess();
+            } else {
+                showFailure();
+            }
+        } else if (this.readyState == 4) {
+            showFailure();
+        } else {
+            showSending();
+        }
+    }
+    xhttp.open("POST", "/send-email");
+    xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhttp.send(JSON.stringify(params));
 }
 
 var validateFieldsFunction = function() { validateFields(); }
