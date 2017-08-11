@@ -56,7 +56,7 @@ def send_email():
         if recaptcha_is_valid(token):
             aws = boto3.client('ses')
             aws.send_email(
-                Source=os.environ['FROM_ADDRESS'],
+                Source='"%s" <%s>' % (name, os.environ['FROM_ADDRESS']),
                 Destination={
                     'ToAddresses': [os.environ['TO_ADDRESS']]
                 },
