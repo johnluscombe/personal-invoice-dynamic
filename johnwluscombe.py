@@ -55,7 +55,7 @@ def send_email():
         message = request.json['message']
         token = request.json['token']
 
-        logger.info('%s is attempting to send a message to %s' (name, os.environ['TO_ADDRESS']))
+        logger.info('%s is attempting to send a message to %s' % (name, os.environ['TO_ADDRESS']))
 
         if recaptcha_is_valid(token):
             aws = boto3.client('ses')
@@ -83,5 +83,5 @@ def send_email():
             logger.error('An error occurred while attempting to send email: recaptcha failed')
             return jsonify({'success': 'false'})
     except Exception as e:
-        logger.error('An error occurred while attempting to send email: %s' % e)
+        logger.exception('An error occurred while attempting to send email: %s' % e)
         return jsonify({'success': 'false'})
