@@ -78,7 +78,3 @@ def send_email():
             return jsonify({'success': 'false'})
     except Exception as e:
         return jsonify({'success': 'false'})
-
-
-if __name__ == '__main__':
-    app.run()
