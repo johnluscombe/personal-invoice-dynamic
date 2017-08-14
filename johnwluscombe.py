@@ -6,6 +6,7 @@ from flask import request
 import boto3
 import http.client
 import json
+import logger
 import os
 
 
@@ -53,6 +54,8 @@ def send_email():
         message = request.json['message']
         token = request.json['token']
 
+        Logger.info('%s is attempting to send a message to %s' (name, os.environ['TO_ADDRESS']))
+
         if recaptcha_is_valid(token):
             aws = boto3.client('ses')
             aws.send_email(
@@ -73,8 +76,11 @@ def send_email():
                 }
             )
 
+            Logger.info('Successfully sent email from %s to %s' % (os.environ['FROM_ADDRESS'], os.environ['TO_ADDRESS']))
             return jsonify({'success': 'true'})
         else:
+            Logger.error('An error occurred while attempting to send email: recaptcha failed')
             return jsonify({'success': 'false'})
     except Exception as e:
+        Logger.error('An error occurred while attempting to send email: %s' % e)
         return jsonify({'success': 'false'})
