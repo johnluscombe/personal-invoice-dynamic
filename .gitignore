@@ -1,4 +1,6 @@
 .idea
+__pycache__
 *.pyproj
 *.sln
 .vs
+*.zip

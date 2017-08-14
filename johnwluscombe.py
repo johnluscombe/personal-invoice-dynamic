@@ -6,7 +6,7 @@ from flask import request
 import boto3
 import http.client
 import json
-import logger
+import logging
 import os
 
 
@@ -46,6 +46,7 @@ def get_email_body(name, email, phone, company, message):
 
 @app.route('/send-email', methods=['POST'])
 def send_email():
+    logger = logging.getLogger('johnwluscombe.com')
     try:
         name = request.json['name']
         email = request.json['email']
@@ -54,7 +55,7 @@ def send_email():
         message = request.json['message']
         token = request.json['token']
 
-        Logger.info('%s is attempting to send a message to %s' (name, os.environ['TO_ADDRESS']))
+        logger.info('%s is attempting to send a message to %s' (name, os.environ['TO_ADDRESS']))
 
         if recaptcha_is_valid(token):
             aws = boto3.client('ses')
@@ -76,11 +77,11 @@ def send_email():
                 }
             )
 
-            Logger.info('Successfully sent email from %s to %s' % (os.environ['FROM_ADDRESS'], os.environ['TO_ADDRESS']))
+            logger.info('Successfully sent email from %s to %s' % (os.environ['FROM_ADDRESS'], os.environ['TO_ADDRESS']))
             return jsonify({'success': 'true'})
         else:
-            Logger.error('An error occurred while attempting to send email: recaptcha failed')
+            logger.error('An error occurred while attempting to send email: recaptcha failed')
             return jsonify({'success': 'false'})
     except Exception as e:
-        Logger.error('An error occurred while attempting to send email: %s' % e)
+        logger.error('An error occurred while attempting to send email: %s' % e)
         return jsonify({'success': 'false'})
