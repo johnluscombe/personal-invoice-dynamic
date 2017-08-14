@@ -23,7 +23,8 @@ def recaptcha_is_valid(token):
     endpoint = '/recaptcha/api/siteverify'
     params = '?secret=%s&response=%s'% (os.environ['RECAPTCHA_SECRET'], token)
     path = endpoint + params
-    connection.request('POST', path)
+    headers = {'Content-Length': 0}
+    connection.request('POST', path, None, headers)
     httpResponse = connection.getresponse()
     stringResponse = httpResponse.read().decode()
     response = json.loads(stringResponse)
@@ -58,7 +59,7 @@ def send_email():
         logger.info('%s is attempting to send a message to %s' % (name, os.environ['TO_ADDRESS']))
 
         if recaptcha_is_valid(token):
-            aws = boto3.client('ses')
+            aws = boto3.client('ses', region_name='us-east-1')
             aws.send_email(
                 Source='"%s" <%s>' % (name, os.environ['FROM_ADDRESS']),
                 Destination={
