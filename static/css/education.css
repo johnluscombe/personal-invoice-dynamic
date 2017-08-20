@@ -15,7 +15,6 @@
 
 .course-image, .course-image-right {
     border-radius: 75px;
-    height: 150px;
 }
 
 .course-title {
@@ -50,9 +49,7 @@
 
 #taylor-trojans {
     border-radius: 100px;
-    height: 200px;
     margin: 0 15px;
-    width: 200px;
 }
 
 @media (max-width: 767px) {
