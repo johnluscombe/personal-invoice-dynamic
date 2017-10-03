@@ -25,3 +25,9 @@
     display: block;
     margin: 0 auto;
 }
+
+@media (min-width: 1920px) {
+    #overview-background {
+        width: 100%;
+    }
+}
