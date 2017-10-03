@@ -30,6 +30,19 @@
     position: relative;
 }
 
+.isa-link {
+    color: #00AAFF;
+    text-decoration: underline;
+}
+
+.isa-link:last-child {
+    margin-right: 0;
+}
+
+#isa-links {
+    margin: 10px 0;
+}
+
 #taylor-container {
     align-items: center;
     display: flex;
