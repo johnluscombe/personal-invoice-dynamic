@@ -14,26 +14,19 @@
 }
 
 #technical-skills {
-    background-color: rgba(68, 229, 170, 0.9);
-    color: white;
-    width: 100%;
-    padding-bottom: 100px;
-    padding-top: 100px;
+    background: url('/static/img/brain_circuits.png') fixed no-repeat center;
+    background-size: auto 100%;
     position: relative;
-    text-shadow: 1px 1px 1px #44e5aa;
-    text-align: center;
-    text-shadow: 1px 1px 1px #159d6b;
+    width: 100%;
 }
 
-#technical-skills-background {
-    display: none;
-    height: 100%;
-    margin: 0 auto;
-    position: fixed;
-    transform: translate(-50%, -50%);
-
-    left: 50%;
-    top: 50%;
+#technical-skills-content {
+    background-color: rgba(68, 229, 170, 0.9);
+    color: white;
+    padding-bottom: 100px;
+    padding-top: 100px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #159d6b;
 }
 
 @media (min-width: 577px) {

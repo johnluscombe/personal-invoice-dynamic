@@ -28,21 +28,6 @@ function checkForOpenSidebar() {
     }
 }
 
-function handleBackgrounds() {
-    var endOfOverview = document.getElementById("overview").clientHeight;
-
-    if (window.pageYOffset > endOfOverview) {
-        document.getElementById("overview-background").style.display = "none";
-        document.getElementById("technical-skills-background").style.display = "block";
-    } else if (window.pageYOffset > endOfOverview-50) {
-        document.getElementById("overview-background").style.display = "block";
-        document.getElementById("technical-skills-background").style.display = "none";
-    } else {
-        document.getElementById("overview-background").style.display = "block";
-        document.getElementById("technical-skills-background").style.display = "none";
-    }
-}
-
 function validateFields() {
   var emailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -130,4 +115,3 @@ function sendEmail() {
 var validateFieldsFunction = function() { validateFields(); }
 window.onload = function() { checkBrowser(); }
 window.onresize = function() { checkForOpenSidebar(); }
-window.onscroll = function() { handleBackgrounds(); };
