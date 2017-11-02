@@ -8,10 +8,10 @@ function checkBrowser() {
 
 function openSidebar() {
     document.getElementById("burger").onclick = closeSidebar;
-    document.getElementById("main").style.marginLeft = "-300px";
-    document.getElementById("main").style.marginRight = "300px";
-    document.getElementById("navbar").style.marginRight = "300px";
-    document.getElementById("sidebar").style.width = "300px";
+    document.getElementById("main").style.marginLeft = "-350px";
+    document.getElementById("main").style.marginRight = "350px";
+    document.getElementById("navbar").style.marginRight = "350px";
+    document.getElementById("sidebar").style.width = "350px";
 }
 
 function closeSidebar() {
