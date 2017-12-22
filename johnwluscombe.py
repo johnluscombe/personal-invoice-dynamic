@@ -3,6 +3,9 @@ from flask import jsonify
 from flask import render_template
 from flask import request
 
+from datetime import datetime
+from datetime import timedelta
+
 import boto3
 import http.client
 import json
@@ -15,7 +18,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', now=datetime.utcnow() - timedelta(hours=5))
 
 
 def recaptcha_is_valid(token):
