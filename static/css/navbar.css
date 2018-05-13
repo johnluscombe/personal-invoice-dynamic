@@ -9,15 +9,16 @@
 }
 
 .fa.fa-bars {
-    font-size: 3em;
+    font-size: 2em;
     position: absolute;
     right: 16px;
-    top: 13px;
+    top: 8px;
 }
 
 #navbar {
     background-color: rgba(0, 0, 0, 0.5);
     border-bottom: 1px solid white;
+    height: 50px;
     margin: 0;
     padding: 0 8px;
     position: fixed;
@@ -45,22 +46,10 @@
     .fa.fa-bars {
         display: none;
     }
-
-    #navbar {
-        height: 50px;
-    }
 }
 
 @media (max-width: 1024px) {
     #contact-navbar, #navbar-links {
         display: none;
-    }
-
-    #navbar {
-        height: 75px;
-    }
-
-    #navbar-brand-text {
-        font-size: 3em;
     }
 }

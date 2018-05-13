@@ -71,6 +71,7 @@ h1 {
     font-size: 4em;
     margin: 0;
     text-transform: uppercase;
+    word-wrap: break-word;
 }
 h1 > em {
     font-family: Oswald-Bold-Italic, sans-serif;
@@ -82,6 +83,7 @@ h2 {
     font-size: 3em;
     margin: 0;
     text-transform: uppercase;
+    word-wrap: break-word;
 }
 h2 > em {
     font-family: Oswald-Regular-Italic, sans-serif;
@@ -96,6 +98,7 @@ h3 {
     font-size: 2.34em;
     margin: 0;
     text-transform: uppercase;
+    word-wrap: break-word;
 }
 h3 > em {
    font-family: Oswald-Regular-Italic, sans-serif; 
@@ -110,6 +113,7 @@ h4 {
     font-size: 2em;
     margin: 0;
     text-transform: uppercase;
+    word-wrap: break-word;
 }
 h4 > em {
     font-family: Oswald-Light-Italic, sans-serif;
@@ -124,6 +128,7 @@ h5 {
     font-size: 1.66em;
     margin: 0;
     text-transform: uppercase;
+    word-wrap: break-word;
 }
 h5 > em {
     font-family: Oswald-Light-Italic, sans-serif;
@@ -138,12 +143,18 @@ h6 {
     font-size: 1.33em;
     margin: 0;
     text-transform: uppercase;
+    word-wrap: break-word;
 }
 h6 > em {
     font-family: Oswald-Light-Italic, sans-serif;
 }
 h6 > strong {
     font-family: Oswald-Regular, sans-serif;
+}
+
+
+img {
+    max-width: 100%;
 }
 
 
