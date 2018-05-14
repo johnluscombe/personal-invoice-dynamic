@@ -30,16 +30,21 @@
     position: relative;
 }
 
-.isa-link {
+.project-link-left,
+.project-link-right {
     color: #00AAFF;
     text-decoration: underline;
 }
 
-.isa-link:last-child {
+.project-link-left:first-child {
+    margin-left: 0;
+}
+
+.project-link-right:last-child {
     margin-right: 0;
 }
 
-#isa-links {
+.project-links {
     margin-top: 5px;
 }
 
