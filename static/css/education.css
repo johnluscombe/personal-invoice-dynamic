@@ -30,6 +30,11 @@
     position: relative;
 }
 
+.education-award {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
 .project-link-left,
 .project-link-right {
     color: #00AAFF;
