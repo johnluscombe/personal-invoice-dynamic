@@ -180,10 +180,23 @@ textarea {
     resize: vertical;
 }
 
+a.black-button,
+button.black-button {
+    border: 2px solid black;
+    background: none;
+    color: black;
+    cursor: pointer;
+    font-family: Oswald-Light, sans-serif;
+    font-size: 1.37em;
+    outline: none;
+    padding: 0 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
 .center-block {
     margin: 0 auto;
 }
-
 
 .inline-link {
     margin: 0;
