@@ -1,7 +1,9 @@
+gen
 .idea
 __pycache__
 *.pyproj
 *.sln
 venv
 .vs
+.webassets-cache
 *.zip

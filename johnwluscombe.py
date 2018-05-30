@@ -3,6 +3,7 @@ from flask import jsonify
 from flask import render_template
 from flask import request
 
+from flask_assets import Environment, Bundle
 from flask_compress import Compress
 
 from datetime import datetime
@@ -17,6 +18,14 @@ import os
 
 app = Flask(__name__)
 Compress(app)
+
+assets = Environment(app)
+css = Bundle('css/about_me.css', 'css/alert.css', 'css/bootstrap.css', 'css/bootstrap-grid.min.css', 'css/carousel.css',
+             'css/education.css', 'css/footer.css', 'css/form-control.css', 'css/general.css', 'css/index.css',
+             'css/meter.css', 'css/modal.css', 'css/navbar.css', 'css/overview.css', 'css/projects.css',
+             'css/sidebar.css', 'css/technical_skills.css', 'css/work_history.css',
+             filters='cssmin', output='gen/css_all.css')
+assets.register('css_all', css)
 
 
 @app.route('/')

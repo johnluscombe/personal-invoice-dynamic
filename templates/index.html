@@ -11,25 +11,9 @@
 
     <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="/static/css/about_me.css">
-    <link rel="stylesheet" href="/static/css/education.css">
-    <link rel="stylesheet" href="/static/css/footer.css">
-    <link rel="stylesheet" href="/static/css/general.css">
-    <link rel="stylesheet" href="/static/css/index.css">
-    <link rel="stylesheet" href="/static/css/meter.css">
-    <link rel="stylesheet" href="/static/css/navbar.css">
-    <link rel="stylesheet" href="/static/css/overview.css">
-    <link rel="stylesheet" href="/static/css/projects.css">
-    <link rel="stylesheet" href="/static/css/sidebar.css">
-    <link rel="stylesheet" href="/static/css/technical_skills.css">
-    <link rel="stylesheet" href="/static/css/work_history.css">
-
-    <link rel="stylesheet" href="/static/css/bootstrap.css">
-    <link rel="stylesheet" href="/static/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="/static/css/alert.css">
-    <link rel="stylesheet" href="/static/css/carousel.css">
-    <link rel="stylesheet" href="/static/css/form-control.css">
-    <link rel="stylesheet" href="/static/css/modal.css">
+    {% assets "css_all" %}
+        <link rel="stylesheet" href="{{ ASSET_URL }}">
+    {% endassets %}
 
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
