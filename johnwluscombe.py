@@ -3,6 +3,8 @@ from flask import jsonify
 from flask import render_template
 from flask import request
 
+from flask_compress import Compress
+
 from datetime import datetime
 from datetime import timedelta
 
@@ -14,6 +16,7 @@ import os
 
 
 app = Flask(__name__)
+Compress(app)
 
 
 @app.route('/')
