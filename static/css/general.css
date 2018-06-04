@@ -1,36 +1,9 @@
-@font-face {
-    font-family: Oswald-Bold;
-    src: url("/static/font/Oswald-Bold.ttf");
-}
-
-@font-face {
-    font-family: Oswald-Bold-Italic;
-    src: url("/static/font/Oswald-BoldItalic.ttf");
-}
-
-@font-face {
-    font-family: Oswald-Regular;
-    src: url("/static/font/Oswald-Regular.ttf");
-}
-
-@font-face {
-    font-family: Oswald-Regular-Italic;
-    src: url("/static/font/Oswald-RegularItalic.ttf");
-}
-
-@font-face {
-    font-family: Oswald-Light;
-    src: url("/static/font/Oswald-Light.ttf");
-}
-
-@font-face {
-    font-family: Oswald-Light-Italic;
-    src: url("/static/font/Oswald-LightItalic.ttf");
+* {
+    font-family: 'Oswald', sans-serif;
 }
 
 a {
     color: white;
-    font-family: Oswald-Light, sans-serif;
     margin: 0 10px;
     text-decoration: none;
     text-transform: uppercase;
@@ -46,7 +19,6 @@ body {
 button {
     background: none;
     cursor: pointer;
-    font-family: Oswald-Light, sans-serif;
     font-size: 1.37em;
     outline: none;
     padding: 0 10px;
@@ -54,122 +26,62 @@ button {
     text-transform: uppercase;
 }
 
-
-div {
-    font-family: Oswald-Light, sans-serif;
-}
-div > em {
-    font-family: Oswald-Light-Italic, sans-serif;
-}
-div > strong {
-    font-family: Oswald-Regular, sans-serif;
-}
-
-
 h1 {
-    font-family: Oswald-Bold, sans-serif;
     font-size: 4em;
     margin: 0;
     text-transform: uppercase;
     word-wrap: break-word;
 }
-h1 > em {
-    font-family: Oswald-Bold-Italic, sans-serif;
-}
-
 
 h2 {
-    font-family: Oswald-Regular, sans-serif;
     font-size: 3em;
     margin: 0;
     text-transform: uppercase;
     word-wrap: break-word;
 }
-h2 > em {
-    font-family: Oswald-Regular-Italic, sans-serif;
-}
-h2 > strong {
-    font-family: Oswald-Bold, sans-serif;
-}
-
 
 h3 {
-    font-family: Oswald-Regular, sans-serif;
     font-size: 2.34em;
     margin: 0;
     text-transform: uppercase;
     word-wrap: break-word;
 }
-h3 > em {
-   font-family: Oswald-Regular-Italic, sans-serif; 
-}
-h3 > strong {
-   font-family: Oswald-bold, sans-serif; 
-}
-
 
 h4 {
-    font-family: Oswald-Light, sans-serif;
     font-size: 2em;
     margin: 0;
     text-transform: uppercase;
     word-wrap: break-word;
 }
-h4 > em {
-    font-family: Oswald-Light-Italic, sans-serif;
-}
-h4 > strong {
-    font-family: Oswald-Regular, sans-serif;
-}
-
 
 h5 {
-    font-family: Oswald-Light, sans-serif;
     font-size: 1.66em;
+    font-weight: normal;
     margin: 0;
     text-transform: uppercase;
     word-wrap: break-word;
 }
-h5 > em {
-    font-family: Oswald-Light-Italic, sans-serif;
-}
-h5 > strong {
-    font-family: Oswald-Regular, sans-serif;
-}
-
 
 h6 {
-    font-family: Oswald-Light, sans-serif;
     font-size: 1.33em;
+    font-weight: normal;
     margin: 0;
     text-transform: uppercase;
     word-wrap: break-word;
 }
-h6 > em {
-    font-family: Oswald-Light-Italic, sans-serif;
-}
-h6 > strong {
-    font-family: Oswald-Regular, sans-serif;
-}
-
 
 img {
     max-width: 100%;
 }
 
+input {
+    font-family: Arial;
+}
 
 p {
-    font-family: Oswald-Light, sans-serif;
     margin: 0;
     text-transform: uppercase;
 }
-p > em {
-    font-family: Oswald-Light-Italic, sans-serif;
-}
-p > strong {
-    font-family: Oswald-Regular, sans-serif;
-}
-
 
 td {
     padding: 0 10px;
@@ -186,7 +98,6 @@ button.black-button {
     background: none;
     color: black;
     cursor: pointer;
-    font-family: Oswald-Light, sans-serif;
     font-size: 1.37em;
     outline: none;
     padding: 0 10px;

@@ -5,15 +5,12 @@
 .course, .course-right {
     align-items: center;
     display: flex;
-    margin: 50px 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .course-image, .course-image-right {
     border-radius: 75px;
-}
-
-.course-title {
-    font-family: Oswald-Regular, sans-serif;
 }
 
 #education {
@@ -57,7 +54,6 @@
 
 #taylor-label {
     display: inline;
-    font-family: Oswald-Light, sans-serif;
     margin-right: 10px;
 }
 
