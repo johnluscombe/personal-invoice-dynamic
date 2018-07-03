@@ -70,7 +70,6 @@ def get_email_body(name, email, phone, company, message):
 
 @app.route('/send-email', methods=['POST'])
 def send_email():
-    logger = logging.getLogger('johnwluscombe.com')
     try:
         name = request.json['name']
         email = request.json['email']
