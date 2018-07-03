@@ -33,6 +33,14 @@ def index():
     return render_template('index.html', now=datetime.utcnow() - timedelta(hours=5))
 
 
+@app.before_request
+def redirect_to_https():
+    if request.url.startswith('http://'):
+        url = request.url.replace('http://', 'https://', 1)
+        code = 301
+        return redirect(url, code=code)
+
+
 def recaptcha_is_valid(token):
     connection = http.client.HTTPSConnection('www.google.com')
     endpoint = '/recaptcha/api/siteverify'
