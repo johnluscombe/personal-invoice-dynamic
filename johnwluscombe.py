@@ -82,7 +82,7 @@ def send_email():
 
         if recaptcha_is_valid(token):
             aws = boto3.client('ses', region_name='us-east-1')
-            aws.send_email(
+            response = aws.send_email(
                 Source='"%s" <%s>' % (name, os.environ['FROM_ADDRESS']),
                 Destination={
                     'ToAddresses': [os.environ['TO_ADDRESS']]
@@ -101,6 +101,7 @@ def send_email():
             )
 
             print('Successfully sent email from %s to %s' % (os.environ['FROM_ADDRESS'], os.environ['TO_ADDRESS']))
+            print('Response from AWS: %s' % response)
             return jsonify({'success': 'true'})
         else:
             print('An error occurred while attempting to send email: recaptcha failed')
