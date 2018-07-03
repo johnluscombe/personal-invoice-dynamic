@@ -13,7 +13,6 @@ from datetime import timedelta
 import boto3
 import http.client
 import json
-import logging
 import os
 
 
@@ -80,7 +79,7 @@ def send_email():
         message = request.json['message']
         token = request.json['token']
 
-        logger.info('%s is attempting to send a message to %s' % (name, os.environ['TO_ADDRESS']))
+        print('%s is attempting to send a message to %s' % (name, os.environ['TO_ADDRESS']))
 
         if recaptcha_is_valid(token):
             aws = boto3.client('ses', region_name='us-east-1')
@@ -102,11 +101,11 @@ def send_email():
                 }
             )
 
-            logger.info('Successfully sent email from %s to %s' % (os.environ['FROM_ADDRESS'], os.environ['TO_ADDRESS']))
+            print('Successfully sent email from %s to %s' % (os.environ['FROM_ADDRESS'], os.environ['TO_ADDRESS']))
             return jsonify({'success': 'true'})
         else:
-            logger.error('An error occurred while attempting to send email: recaptcha failed')
+            print('An error occurred while attempting to send email: recaptcha failed')
             return jsonify({'success': 'false'})
     except Exception as e:
-        logger.exception('An error occurred while attempting to send email: %s' % e)
+        print('An error occurred while attempting to send email: %s' % e)
         return jsonify({'success': 'false'})
